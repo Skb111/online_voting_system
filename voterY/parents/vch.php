@@ -34,53 +34,37 @@ include ('head.php');?>
             window.location=src;
     }
     </script>
-<p/>
 
     </heading>
             <div class="row">
 				
                     <div class="panel panel-default">
                        
-                        <div class="panel-body">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example" border="0">
+                        <!-- /.panel-heading -->
+                 
+                       <?php  
+                    $sql = "SELECT * FROM parents WHERE position = 'Vice Chairman'";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                    
+                      echo '<div class="card text-center" style="width: 17rem; height:17rem; margin-top:2rem;">
+                      
+                      <img src="../admin/'.$image.'" style="border-radius:; width: 17rem; height:17rem;" class="img-fluid">
+                              <div class="card-body" style="margin-bottom:20rem;">
+                                <h6 class="card-title text-center"style="font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p> 
+                              </div>
+                            </div>';
+                    }
 
-                                    <thead class="thead">                                    	
-                                   
-                                         <tr>
-                                            <th>Image</th>
-                                            <th>Firstname</th>
-                                            <th>Lastname</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                            <th>Gender</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-									
-                                        <tr>
-										<?php 
-											// require '../admin/dbcon.php';
-											$bool = false;
-											$query = $conn->query("SELECT * FROM parents WHERE `position` = 'Vice Chairman'");
-												while($row = $query->fetch_array()){
-													$parents_id=$row['parents_id'];
-										?>
-											
-											<td width="50"><img src="../admin/<?php echo $row['img']; ?>" width="50" height="50" class="img-rounded"></td>
-                                            <td><?php echo $row ['firstname'];?></td>
-                                            <td><?php echo $row ['lastname'];?></td>
-                                            <td><?php echo $row ['email'];?></td>
-                                            <td><?php echo $row ['phone'];?></td>
-                                            <td><?php echo $row ['gender'];?></td>
-                                        </tr>
-										
-                                       <?php } ?>
-                                    </tbody>
-                                </table>
-                            
-                            
-                        </div>
+          ?>
+
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->

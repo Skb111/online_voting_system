@@ -61,7 +61,6 @@
                                             <th>Account</th>
                                             <th>Status</th>
                                             <th>Date Registered</th>
-                                            <th>Password</th>
                                             
                                             
                                         </tr>
@@ -82,8 +81,7 @@
                                                 <td><?php echo $row1 ['year_level'];?></td>
                                                 <td><?php echo $row1 ['account'];?></td>
                                                 <td><?php echo $row1 ['status'];?></td>
-                                                <td><?php echo $row1 ['date'];?></td>       
-                                                <td><?php echo $row1 ['password'];?></td>       
+                                                <td><?php echo $row1 ['date'];?></td>        
                                             </tr>
                                         
 										

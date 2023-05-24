@@ -1,5 +1,5 @@
 <?php
-include_once 'headt.php';
+include_once 'head.php';
 ?>
 <!--FOOTER SECTION STARTS-->
              <section class="footer footer-section" id="footer">

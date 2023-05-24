@@ -1,6 +1,7 @@
 <?php
 require 'admin/dbcon.php';
-include ('headt.php');?>
+include_once 'headt.php';
+?>
 
 <body>
 
@@ -10,10 +11,11 @@ include ('headt.php');?>
               <?php include ('view_bannert.php');?>
        
         <div id="page-wrapper">
-
+                
     <heading class="menue-select">
             <center>
-                <select onchange = "page(this.value)" style="margin-top:5rem; width:20rem;">
+            <h1 class="heady" style="margin-top:5rem; color:blue;">STUDENTS PAGE</h1>
+                <select onchange = "page(this.value)" style="margin-top:2rem; margin-bottom:22rem; width:20rem;">
                 <option disabled selected>Select Candidate Group</option>
                 <option value = "candidates/hdb.php">Head Boy</option>
                 <option value = "candidates/hdg.php">Head Girl</option>

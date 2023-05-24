@@ -1,6 +1,7 @@
 <?php
-include_once '../admin/dbcon.php';
-include('head.php'); ?>
+include_once('dbcon.php');
+// include_once('head.php'); 
+?>
 
 <body>
 
@@ -14,7 +15,7 @@ include('head.php'); ?>
 
 				<div class="form-panel">
 
-					<div class="form-body">
+					<div class="form-body col-md-4 mx-auto">
 
 						<form method="post" enctype="multipart/form-data">
 							<div class="voters_notice">
@@ -66,7 +67,7 @@ include('head.php'); ?>
 								<input class="form-control" type="text" name="phone" placeholder="123456789" required="true">
 							</div>
 							<br />
-							<center><button name="save" type="submit">Create An Account</button></center>
+							<center><button name="save" type="submit" style="margin-bottom:16px;">Create An Account</button></center>
 							<div class="link">
 								<h2>
 									<center><a href="../login.php" style="font-size:16px; border:1px solid blue; padding:10px 16px; border-radius:5px; text-decoration:none;">Login to vote</a></center>
@@ -94,19 +95,19 @@ include('head.php'); ?>
 	</div>
 	<!-- /#page-wrapper -->
 	<?php
-	include('footer.php');
+	
 	?>
 
 	</div>
 	<!-- /#wrapper -->
-
+<!-- 
 
 	<style>
 		a:hover {
 			background: blue;
 			color: white !important;
 		}
-	</style>
+	</style> -->
 </body>
 
 </html>

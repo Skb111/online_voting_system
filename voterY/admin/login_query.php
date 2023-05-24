@@ -22,7 +22,7 @@
 			} else{	
 				$_SESSION['id'] = $fetch['user_id'];
 				if(isset($_SESSION['id'])){
-				header("location: ../admin/candidate.php");
+				header("location: ../admin/dashboard/index.html");
 			}else{
 				?>
 				<script type="text/javascript">

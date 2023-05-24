@@ -2,575 +2,802 @@
 <?php include("sess.php");?>
 <body>
 	<?php include 'side_bar.php'; ?>
-    <div id="wrapper">
+	<form method = "POST" action ="vote_result.php">
+				<div class="container justify">
+				<div class="row">
+
+				<div class="panel-heading mt-3">
+					<center class="text-white bg-primary fs-3">Head Boy</center>
+				</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Head Boy' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
     </div>
-	<form method = "POST" action = "vote_result.php">
-	<div class="col-lg-6">
-	
-                    <div class="panel panel-primary">
-                        <div class="panel-heading"><center> Head Boy </center>
-                        </div>
-                        <div class="panel-body" style = "background-color:; display:block;">
-						<?php
-							$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Head Boy'") or die(mysqli_error());
-							while($fetch = $query->fetch_array())
-						{
-						?>
-                           <div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox" value = "<?php echo $fetch['candidate_id'] ?>" name = "hdb_id" class = "hdb">Give Vote</center>
-							</div>
-	
-						<?php
-							}
-						?>
-
-						</div>
-                       
-                    </div>
-     </div>
+</div>
 				
-				
-				<div class="col-lg-6">
-	
-                    <div class="panel panel-primary">
-                        <div class="panel-heading"><center> Head Girl </center>
-                        </div>
-                        <div class="panel-body" style = "background-color:;">
-						<?php
-							$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Head Girl'") or die(mysqli_error());
-							while($fetch = $query->fetch_array()){
-						?>
-		<div id = "position">
-			<center><img class = "image-rounded" src = "admin/<?php echo $fetch['img']?>"style ="border-radius:6px;" height = "150px" width = "150px"></center>
-		    <center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-			<center><input type = "checkbox" value = "<?php echo $fetch['candidate_id'] ?>" name = "hdg_id" class = "hdg">Give Vote</center>
+		<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Head Girl</center>
 		</div>
-						<?php
-							}
-						?>
 
-						</div>
-                       
-                    </div>
-                </div>
-	
-	
-	
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Labour Boy</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Labour Boy'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-						<center><input type = "checkbox" value = "<?php echo $fetch['candidate_id'] ?>" name = "lb_id" class = "lb">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Head Girl' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Labour Girl</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Labour Girl'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-						<center><input type = "checkbox" value = "<?php echo $fetch['candidate_id'] ?>" name = "lg_id" class = "lg">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>	
-	
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Assembly Boy</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Assembly Boy'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox" value = "<?php echo $fetch['candidate_id'] ?>" name = "ab_id" class = "ab">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
+          ?>
      </div>
+    </div>
+</div>
+	
+	
+	
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Labour Boy</center>
+		</div>
 
-	 <div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Assembly Girl</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Assembly Girl'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "ag_id" class = "ag">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Labour Boy' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
      </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Labour Girl</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Labour Girl' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
+	
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Assembly Boy</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Assembly Boy' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Assembly Girl</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Assembly Girl' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
 
 	 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Punctuality Boy</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Punctuality Boy'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "pb_id" class = "pb">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Punctuality Boy</center>
+		</div>
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Punctuality Girl</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Punctuality Girl'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "pg_id" class = "pg">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Punctuality Boy' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
      </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Punctuality Girl</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Punctuality Girl' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
 
 	 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Social Boy</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Social Boy'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "sb_id" class = "sb">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Social Boy</center>
+		</div>
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Social Girl</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Social Girl'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "sg_id" class = "sg">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Social Boy' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
      </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Social Girl</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Social Girl' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
 
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Food Boy</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Food Boy'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox" value = "<?php echo $fetch['candidate_id'] ?>" name = "fb_id" class = "fb">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Food Boy</center>
+		</div>
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Food Girl</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Food Girl'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "fg_id" class = "fg">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Food Boy' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Health Boy</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Health Boy'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "hb_id" class = "hb">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
+          ?>
      </div>
+    </div>
+</div>
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Health Girl</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Health Girl'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "hg_id" class = "hg">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Food Girl</center>
+		</div>
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Library Boy</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Library Boy'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "lib_id" class = "lib">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Food Girl' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Library Girl</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Library Girl'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "lig_id" class = "lig">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
+          ?>
      </div>
+    </div>
+</div>
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Sport Boy</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Sport Boy'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "spb_id" class = "spb">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Health Boy</center>
+		</div>
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Sport Girl</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Sport Girl'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "spg_id" class = "spg">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Health Boy' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Time Keeper</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Time Keeper'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "tk_id" class = "tk">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
+          ?>
      </div>
+    </div>
+</div>
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Janitor</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Janitor'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "jn_id" class = "jn">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Health Girl</center>
+		</div>
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Fellowship Muslim</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Fellowship Muslim'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-							<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "fm_id" class = "fm">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
-     </div>
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Health Girl' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
 
-	<div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Fellowship Christian</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Fellowship Christian'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "fc_id" class = "fc">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
+          ?>
      </div>
+    </div>
+</div>
 
-     <div class="col-lg-6">
-	  <div class="panel panel-primary">
-            <div class="panel-heading">
-			<center>Hostel</center>
-            </div>
-            <div class="panel-body" style = "background-color:;">
-				<?php
-					$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = 'Hostel'") or die(mysqli_errno());
-					while($fetch = $query->fetch_array())
-					{
-				?>
-						<div id = "position">
-							<center><img src = "admin/<?php echo $fetch['img']?>" style ="border-radius:6px;" height = "150px" width = "150px" class = "img"></center>
-						<center><?php echo "<strong>Names: </strong>".$fetch['firstname']." ".$fetch['lastname']."<br/><strong>Gender: </strong> ".$fetch['gender']."<br/><strong>Level: </strong> ".$fetch['year_level']."<br/><strong>Party: </strong> ".$fetch['party']?></center>
-							<center><input type = "checkbox"  value = "<?php echo $fetch['candidate_id'] ?>" name = "ht_id" class = "ht">Give Vote</center>
-						</div>
-	
-				<?php
-					}
-				?>
-			</div>      
-        </div>
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Library Boy</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Library Boy' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
      </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Library Girl</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Library Girl' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Sport Boy</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Sport Boy' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Sport Girl</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Sport Girl' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Time Keeper</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Time Keeper' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Janitor</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Janitor' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Fellowship Muslim</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Fellowship Muslim' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Fellowship Christian</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Fellowship Christian' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
+
+
+<div class="container justify">
+		<div class="row">
+		<div class="panel-heading mt-3">
+				<center class="text-white bg-primary fs-3">Fellowship Muslim</center>
+		</div>
+
+                    <?php  
+                    $sql = "SELECT * FROM candidate WHERE `position` = 'Fellowship Muslim' ";
+                    $result = $conn->query($sql);
+                    
+                    // Loop through the results and assign to the Bootstrap card
+                    while ($row = $result->fetch_assoc()) {
+                      $firstname = $row['firstname'];
+                      $lastname = $row['lastname'];
+                      $image = $row['img'];
+                      $pos = $row['position'];
+                      $candidate_id = $row['candidate_id'];
+                    
+                      echo '<div class="card mx-3 my-4" style="width: 15.7rem;">
+                      
+                      <img src="admin/'.$image.'" style="border-radius: 15px;" class="img-fluid">
+                              <div class="card-body">
+                                <h6 class="card-title"style="color:; font-weight:bold;">Name: ' . $firstname . ' ' . $lastname . '</h6>
+                                <p class="card-text" style="color:; font-weight:bold;">Position: <span style="color:blue; font-weight:bold;">'.$pos.'</span> </p>
+                                <center><input type = "checkbox" value = "'.$candidate_id.'" name = "hdb_id" class = "hdb">Give Vote</center>
+                              </div>
+                            </div>';
+                    }
+
+          ?>
+     </div>
+    </div>
+</div>
+	 
      <hr/>
 		
 		<center><button class = "btn btn-success ballot" type = "submit" name = "submit">Submit Ballot</button></center>
-		<script type = "text/javascript">
+		<!-- <script type = "text/javascript">
 			alert("Welcome!!!");
-		</script>
+		</script> -->
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</form>
 </body>

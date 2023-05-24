@@ -255,10 +255,9 @@
      <hr/>
 		
 		<center><button class = "btn btn-success ballot" type = "submit" name = "submit">Submit Ballot</button></center>
-		<script type = "text/javascript">
+		<!-- <script type = "text/javascript">
 			alert("Welcome!!!");
-			// header(location:"index.php");
-		</script>
+		</script> -->
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</form>
 </body>

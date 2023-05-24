@@ -1,5 +1,5 @@
 <?php 
- require '../admin/dbcon.php';
+require '../admin/dbcon.php';
 include ('head.php');?>
 
 <body>

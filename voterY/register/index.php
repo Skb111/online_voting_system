@@ -1,7 +1,6 @@
 <?php
 require_once 'dbcon.php';
-
-include('head.php');
+include_once('head.php');
 ?>
 
 <body>
@@ -16,7 +15,7 @@ include('head.php');
 
 				<div class="form-panel">
 
-					<div class="form-body">
+					<div class="form-body col-md-4 mx-auto">
 
 						<form method="post" enctype="multipart/form-data">
 
@@ -105,19 +104,11 @@ include('head.php');
 	</div>
 	<!-- /#page-wrapper -->
 	<?php
-	include('footer.php');
+	
 	?>
 
 	</div>
-	<!-- /#wrapper -->
 
-
-	<style>
-		a:hover {
-			background: blue;
-			color: white !important;
-		}
-	</style>
 </body>
 
 </html>

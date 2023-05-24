@@ -1,18 +1,11 @@
 
-            <div class="side-bar" 
-            style="background-color:blue; font-size:25px; text-align:center; margin-top:-10px; padding-top:20px;">
-
-                <a href="../index.php" style="color:white; font-weight:bold; font-size:30px;">2023 Secondary Student Union Elections Registeration</a>
-                </a>
-        <nav class="nav-menue">
+<?php 
+include_once ('head.php');
+include_once ('footer.php');
+?>
+<!-- 
+    <nav class="nav-menue">
             <ul>
-                <!-- <li>
-                    <a href="../index.php">Home</a>
-                </li>
-                <li><a href="../candidate_path.php">Students</a></li>
-                <li><a href="../register_teachers/index.php">Teachers</a></li>
-                <li><a href="../voters.php">Voter List</a></li>
-                <li><a href="../login.php">Login</a></li> -->
 
                 <li>
                     <a href="../index.php">Home</a>
@@ -26,5 +19,63 @@
                 <li><a href="../parents_voters.php">Parents List</a></li>
                 <li><a href="../login.php">Login</a></li>
             </ul>
-        </nav>
-    </div>
+        </nav> -->
+
+
+    <!--- NAV STARTS-->
+    <nav class="navbar navbar-expand-lg fixed-top bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Online Voting System</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="../about.php">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Candidates
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../candidate_path.php">Students</a></li>
+                            <li><a class="dropdown-item" href="../teachers_path.php">Teachers</a></li>
+                            <li><a class="dropdown-item" href="../parents_path.php">Parents</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Register
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../register/index.php">Students</a></li>
+                            <li><a class="dropdown-item" href="../register_teachers/index.php">Teachers</a></li>
+                            <li><a class="dropdown-item" href="../register_parents/index.php">Parents</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Login
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Admin</a></li>
+                        <li><a class="dropdown-item" href="../login.php">Students</a></li>
+                            <li><a class="dropdown-item" href="#">Teachers</a></li>
+                            <li><a class="dropdown-item" href="#">Parents</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="../contact.php">Contact</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                </nav>
+
+        <!--- NAV ENDS-->
+        
+       

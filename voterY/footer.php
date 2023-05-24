@@ -1,4 +1,6 @@
-
+<?php
+include_once 'head.php';
+?>
 <!--FOOTER SECTION STARTS-->
              <section class="footer footer-section" id="footer">
             <footer class="site-footer">

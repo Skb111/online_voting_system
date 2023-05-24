@@ -98,7 +98,6 @@
 
 			if (isset($_POST['save'])) {
 				$position = $_POST['position'];
-				// $party=$_POST['party'];
 				$firstname = $_POST['firstname'];
 				$lastname = $_POST['lastname'];
 				$year_level = $_POST['year_level'];

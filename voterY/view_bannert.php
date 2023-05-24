@@ -1,4 +1,6 @@
-<?php include ('headt.php');?>
+<?php 
+include ('head.php');
+?>
 
 
     <!-- <nav class="nav-menue">
@@ -28,10 +30,10 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="indext.php">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="about.php">About</a>
                         </li>
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,10 +60,10 @@
                             Login
                         </a>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Admin</a></li>
-                        <li><a class="dropdown-item" href="#">Students</a></li>
-                            <li><a class="dropdown-item" href="#">Teachers</a></li>
-                            <li><a class="dropdown-item" href="#">Parents</a></li>
+                        <li><a class="dropdown-item" href="admin/index.php">Admin</a></li>
+                        <li><a class="dropdown-item" href="login.php">Students</a></li>
+                            <li><a class="dropdown-item" href="login_teachers.php">Teachers</a></li>
+                            <li><a class="dropdown-item" href="login_parents.php">Parents</a></li>
                         </ul>
                         </li>
                         <li class="nav-item">

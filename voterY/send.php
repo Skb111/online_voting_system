@@ -38,7 +38,7 @@ if (isset($_POST['submit'])){
 
     echo "<script>
                 alert('Sent Successfully');
-                document.location.href='index.php';
+                document.location.href='indext.php';
             </script>";
 }
 

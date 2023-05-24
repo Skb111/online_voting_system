@@ -4,14 +4,14 @@ include ('session.php');
 
 ?>
 
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom:0; background-color: blue;">
+         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom:0; background-color: blue;">
             <div class="navbar-header">
-                <a class="navbar-brand" href="" style = "color:white;"><i class = "fa fa-home fa-large" > </i>HOME | Admin Portal</a>
+                <a class="navbar-brand" href="candidate.php" style = "color:white;"><i class = "fa fa-home fa-large" > </i>Admin Portal</a>
 				
             </div>
       
 
-            <ul class="nav navbar-top-links navbar-right">
+            <ul class="nav navbar-top-links">
             
                <?php 
 				$query = $conn->query("SELECT * from user where user_id ='$session_id'")or die (mysql_error ());
@@ -34,58 +34,58 @@ include ('session.php');
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         
-                        <li>
+                        <!-- <li>
                             <a href="#" class = "bg-success" ><i class="fa fa-menu fa-fw"></i>Menu </a>
-                        </li>
+                        </li> -->
 
                         <li>
-                            <a href="candidate.php" class = "bg-success" ><i class = "fa fa-user fa-fw"></i> View Student Candidates</a>
+                            <a href="candidate.php" class = "bg-success text-white" ><i class = "fa fa-user fa-fw"></i> View Student Candidates</a>
                          
                         </li>
                         <li>
-                            <a href="teachers.php" class = "bg-success" ><i class = "fa fa-user fa-fw"></i> Teachers Candidates</a>
+                            <a href="teachers.php" class = "bg-success text-white" ><i class = "fa fa-user fa-fw"></i> Teachers Candidates</a>
                          
                         </li>
                         <li>
-                            <a href="parents.php" class = "bg-success" ><i class = "fa fa-user fa-fw"></i> Parents Candidates</a>
+                            <a href="parents.php" class = "bg-success text-white" ><i class = "fa fa-user fa-fw"></i> Parents Candidates</a>
                          
                         </li>
 						<li>
-                          <a href="voters.php" class = "bg-success" ><i class = "fa fa-user fa-fw"></i> View Voters</a>
+                          <a href="voters.php" class = "bg-success text-white" ><i class = "fa fa-user fa-fw"></i> View Voters</a>
                         </li>
                         <li>
-                          <a href="current_students.php" class = "bg-success" ><i class = "fa fa-user fa-fw"></i>Students</a>
+                          <a href="current_students.php" class = "bg-success text-white" ><i class = "fa fa-user fa-fw"></i>Students</a>
                         </li>
                         <li>
-                          <a href="current_teachers.php" class = "bg-success" ><i class = "fa fa-user fa-fw bg-success"></i>Teachers</a>
+                          <a href="current_teachers.php" class = "bg-success text-white" ><i class = "fa fa-user fa-fw bg-success"></i>Teachers</a>
                         </li>
                         <li>
-                          <a href="current_parents.php" class = "bg-success" ><i class = "fa fa-user fa-fw bg-success"></i>Parents</a>
+                          <a href="current_parents.php" class = "bg-success text-white" ><i class = "fa fa-user fa-fw bg-success"></i>Parents</a>
                         </li>
 						
                         <li>
-                            <a href="canvassing.php" class = "bg-success" ><i class="fa fa-download fa-fw"></i>Election Reports</a>
+                            <a href="canvassing.php" class = "bg-success text-white" ><i class="fa fa-download fa-fw"></i>Election Reports</a>
                         </li>
                         <li>
-                            <a href="teachers_canvassing.php" class = "bg-success" ><i class="fa fa-download fa-fw"></i>Teachers Election Reports</a>
+                            <a href="teachers_canvassing.php" class = "bg-success text-white" ><i class="fa fa-download fa-fw"></i>Teachers Election Reports</a>
                         </li>
                         <li>
-                            <a href="parents_canvassing.php" class = "bg-success" ><i class="fa fa-download fa-fw"></i>Parents Election Reports</a>
+                            <a href="parents_canvassing.php" class = "bg-success text-white" ><i class="fa fa-download fa-fw"></i>Parents Election Reports</a>
                         </li>
                         <li>
-                            <a href="user.php" class = "bg-success" > <i class = "fa fa-users" ></i> View User</a>
+                            <a href="user.php" class = "bg-success text-white" > <i class = "fa fa-users" ></i> View User</a>
                         </li>
                         <li>
-                            <a href="teachers_voters.php" class = "bg-success" > <i class = "fa fa-users" ></i> View Teachers Voters</a>
+                            <a href="teachers_voters.php" class = "bg-success text-white" > <i class = "fa fa-users" ></i> View Teachers Voters</a>
                         </li>
                         <li>
-                            <a href="parents_voters.php" class = "bg-success" > <i class = "fa fa-users" ></i> View Parents Voters</a>
+                            <a href="parents_voters.php" class = "bg-success text-white" > <i class = "fa fa-users" ></i> View Parents Voters</a>
                         </li>
                         <li>
-                            <a href="login_times.php" class = "bg-success" > <i class = "fa fa-users" ></i>User Login Time</a>
+                            <a href="login_times.php" class = "bg-success text-white" > <i class = "fa fa-users" ></i>User Login Time</a>
                         </li>
                         <li>
-                           <a href="logout.php" class = "bg-success" > <i class = "fa fa-sign-out" ></i>Logout</a>
+                           <a href="logout.php" class = "bg-success text-white" > <i class = "fa fa-sign-out" ></i>Logout</a>
                         </ul>
                         </li>
 

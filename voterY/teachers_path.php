@@ -1,18 +1,19 @@
-
-<?php include ('head.php');?>
+<?php
+include_once 'head.php';
+?>
 
 <body>
 
     <div id="wrapper">
 
       
-              <?php include ('view_banner.php');?>
+              <?php include ('view_bannert.php');?>
        
         <div id="page-wrapper">
 
     <heading class="menue-select">
             <center>
-                <select onchange = "page(this.value)">
+                <select onchange = "page(this.value)" style="margin-top:5rem; width:20rem;">
                 <option disabled selected>Select Candidate Group</option>
                 <option value = "teachers/hod.php">HOD</option>
                 <option value = "teachers/exm.php">Exam Director</option>
@@ -35,7 +36,7 @@
     
     <!-- /#wrapper -->
     <?php    
-        include ('footer.php');
+        include ('footert.php');
         ?>
 
     <script>

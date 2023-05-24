@@ -15,15 +15,15 @@ include ('head.php');
             &nbsp;&nbsp;&nbsp;
             <div class="col-md-4 col-md-offset-4">
 			
-                <div class="login-panel"><!-- has form in it-->
+                <div class="login-panel">
+                    <!-- has form in it-->
 				
-                    
-                    <div class="form-panel"><center>
+                    <div class="form-panel" style="margin-top:5rem; margin-left:8rem; width:50rem;">
+                        <center>
                         <i>Login As:</i>
-                        <select onchange = "page(this.value)">
+                        <select onchange = "page(this.value)" class="col-md-6">
                             <option value = "admin/index.php">System Admin</option>
-                            <!-- <option value = "admin2/index.php">System User</option> -->
-                            <option value = "login_parents.php">Teachers</option>
+                            <option value = "login_teachers.php">Teachers</option>
                             <option selected disables>Parents</option>
                             <option value = "login.php" >Student Voter</option> 
                         </select>
@@ -31,7 +31,7 @@ include ('head.php');
                     </center>
                         <form role="form" method = "post" class="index-form">
                             <div class="form-heading">
-                            <center>Parents Login</center>
+                            <center style="color:green; font-weight:bold;">Parents Login</center>
                             </div>
                             
                                 
@@ -45,9 +45,9 @@ include ('head.php');
 										<input class="form-control" placeholder="Enter Password" name="password" type="password" required = "required">
                                 </div>
                              <br/>
-                                <center><button class="btn btn-lg btn-primary btn-block " name = "login" style= " margin-bottom:0px;" width="50">Login</button>
+                                <center><button class="btn btn-lg btn-success btn-block " name = "login" style= " margin-bottom:0px;" width="50">Login</button>
                                 &nbsp; 
-                            <a  href="register_parents/index.php"><button type="button" class="btn btn-lg btn-primary btn-block" data-dismiss="modal" style= " margin-bottom:0px;">Register</button></a>
+                            <a  href="register_parents/index.php"><button type="button" class="btn btn-lg btn-success btn-block" data-dismiss="modal" style= " margin-bottom:0px;">Register</button></a>
             
                                 &nbsp;
                         </form>

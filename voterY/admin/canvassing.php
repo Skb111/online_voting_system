@@ -30,7 +30,6 @@
 			
 			<select name="position" id="position" class = "form-control pull-left" style = "width:300px;margin-left:19px; ">
 				<option readonly>----Sort by Position----</option>
-				<option></option>
 								<option>Head Boy</option>
 								<option>Head Girl</option>
 								<option>Labour Boy</option>
